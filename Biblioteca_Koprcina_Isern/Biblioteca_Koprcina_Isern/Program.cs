@@ -113,14 +113,14 @@ namespace Biblioteca2
 
                     foreach (var s in socios)
                     {
-                        var prestamos = context.Prestamo
+                        var prestamoss = context.Prestamo
                             .Where(p => p.Socio.NumeroSocio == s.NumeroSocio)
                             .Include(p => p.Socio).ThenInclude(s => s.Tipo)
                             .ToList();
 
                         int multas = 0;
 
-                        foreach (var p in prestamos)
+                        foreach (var p in prestamoss)
                         {
                             if (DateTime.Today > Convert.ToDateTime(p.FechaVencimiento))
                             {
@@ -138,6 +138,28 @@ namespace Biblioteca2
                     Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
                     Console.ReadLine();
                     break;
+                
+                case 3:
+
+                    var prestamos = context.Prestamo
+                        .Include(p => p.Socio).ThenInclude(s => s.Tipo)
+                        .ToList();
+
+                    foreach (var p in prestamos)
+                    {
+                        if (DateTime.Today > Convert.ToDateTime(p.FechaVencimiento))
+                        {
+                            int multa = p.Socio.Tipo.MultaXDia * (DateTime.Today - Convert.ToDateTime(p.FechaVencimiento)).Days;
+                            Console.WriteLine($"Socio: {p.Socio.Nombre} {p.Socio.Apellido} | Vencido desde {p.FechaVencimiento} | Multa:  ${multa}");
+                        }
+                    }
+                    Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                    Console.ReadLine();
+                    break;
+
+                case 4:
+
+
             }
 
 
