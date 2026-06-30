@@ -15,7 +15,7 @@ namespace Biblioteca2
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlite(@"Data Source=C:\Users\sofia\Downloads\ClinicaMedica-master\Biblioteca2\Sistema_Biblioteca.db");
+            options.UseSqlite(@"Data Source=C:\Users\felip\Desktop\Sistema_Biblioteca_POO2\Biblioteca_Koprcina_Isern\Biblioteca_Koprcina_Isern\Sistema_Biblioteca.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -29,6 +29,10 @@ namespace Biblioteca2
             modelBuilder.Entity<Socio>()
                 .ToTable("Socio")
                 .HasKey(s => s.NumeroSocio);
+            modelBuilder.Entity<Socio>()
+                .HasOne(s => s.Tipo)
+                .WithMany()
+                .HasForeignKey(s => s.TipoSocio);
 
             // Reserva
             modelBuilder.Entity<Reserva>()
@@ -36,6 +40,12 @@ namespace Biblioteca2
                 .HasKey(r => new { r.NumeroSocio, r.ISBN });
             modelBuilder.Entity<Reserva>()
                 .Property(r => r.FechaReserva).HasColumnName("FechaReserva");
+            modelBuilder.Entity<Reserva>()
+                .Property(r => r.ISBN).HasColumnName("Libro");
+            modelBuilder.Entity<Reserva>()
+                .Property(r => r.NumeroSocio).HasColumnName("Socio");
+            modelBuilder.Entity<Reserva>()
+                .Property(r => r.EstadoId).HasColumnName("Estado");
 
             // foreign keys for Reserva
             modelBuilder.Entity<Reserva>()
@@ -56,6 +66,12 @@ namespace Biblioteca2
             // Prestamo
             modelBuilder.Entity<Prestamo>()
                 .HasKey(p => new {p.NumeroSocio, p.ISBN, p.FechaPrestamo});
+            modelBuilder.Entity<Prestamo>()
+                .Property(p => p.ISBN).HasColumnName("Libro");
+            modelBuilder.Entity<Prestamo>()
+                .Property(p => p.EstadoId).HasColumnName("Estado");
+            modelBuilder.Entity<Prestamo>()
+                .Property(p => p.NumeroSocio).HasColumnName("Socio");
             modelBuilder.Entity<Prestamo>()
                 .Property(p => p.FechaPrestamo).HasColumnName("FechaPrestamo");
             modelBuilder.Entity<Prestamo>()

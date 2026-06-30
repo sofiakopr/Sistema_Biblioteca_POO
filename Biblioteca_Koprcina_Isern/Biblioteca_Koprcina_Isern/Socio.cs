@@ -13,6 +13,7 @@ namespace Biblioteca2
         public string Apellido { get; set; }
         public string Email { get; set; }
         public int TipoSocio { get; set; }
+        public TipoSocio Tipo {  get; set; }
         public int Activo { get; set; }
     }
 }

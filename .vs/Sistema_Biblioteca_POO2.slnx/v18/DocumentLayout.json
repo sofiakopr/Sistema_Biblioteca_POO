@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Socio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Socio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\TipoSocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\TipoSocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Reserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Reserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\EstadoReserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\EstadoReserva.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\DBContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\DBContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Biblioteca_Koprcina_Isern.csproj",
+              "DocumentMoniker": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern.csproj",
+              "RelativeDocumentMoniker": "Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern.csproj",
+              "ToolTip": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern.csproj",
+              "RelativeToolTip": "Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-30T03:50:29.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EstadoReserva.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\EstadoReserva.cs",
+              "RelativeDocumentMoniker": "Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\EstadoReserva.cs",
+              "ToolTip": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\EstadoReserva.cs",
+              "RelativeToolTip": "Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\EstadoReserva.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-30T03:39:06.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Reserva.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Reserva.cs",
+              "RelativeDocumentMoniker": "Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Reserva.cs",
+              "ToolTip": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Reserva.cs",
+              "RelativeToolTip": "Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Reserva.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-30T00:17:05.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Socio.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Socio.cs",
+              "RelativeDocumentMoniker": "Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Socio.cs",
+              "ToolTip": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Socio.cs",
+              "RelativeToolTip": "Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Socio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T23:03:07.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Prestamo.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Prestamo.cs",
+              "RelativeDocumentMoniker": "Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Prestamo.cs",
+              "ToolTip": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Prestamo.cs",
+              "RelativeToolTip": "Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Prestamo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T23:31:58.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Program.cs",
+              "RelativeDocumentMoniker": "Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Program.cs",
+              "ToolTip": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Program.cs",
+              "RelativeToolTip": "Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\Program.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAAAHkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T23:11:27.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TipoSocio.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\TipoSocio.cs",
+              "RelativeDocumentMoniker": "Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\TipoSocio.cs",
+              "ToolTip": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\TipoSocio.cs",
+              "RelativeToolTip": "Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\TipoSocio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T23:03:56.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DBContext.cs",
+              "DocumentMoniker": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\DBContext.cs",
+              "RelativeDocumentMoniker": "Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\DBContext.cs",
+              "ToolTip": "C:\\Users\\felip\\Desktop\\Sistema_Biblioteca_POO2\\Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\DBContext.cs",
+              "RelativeToolTip": "Biblioteca_Koprcina_Isern\\Biblioteca_Koprcina_Isern\\DBContext.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAuwC8AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T22:53:51.422Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
