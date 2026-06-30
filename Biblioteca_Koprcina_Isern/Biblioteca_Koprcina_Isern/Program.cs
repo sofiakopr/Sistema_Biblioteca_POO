@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Dynamic;
+using System.Security.Cryptography.X509Certificates;
 using Biblioteca2;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +17,8 @@ namespace Biblioteca2
             while (bucle > 0)
             {
                 //mostrar todos los libros ordenados por ISBN y luego por Titulo
+
+
                 var libros = context.Libro
                 .OrderBy(l => l.ISBN)
                 .ThenBy(l => l.Titulo)
@@ -32,10 +35,11 @@ namespace Biblioteca2
                 Console.WriteLine("2. Flujo de devolución");
                 Console.WriteLine("3. Flujo de reserva");
                 Console.WriteLine("4. Mostrar detalles de un Socio");
+                Console.WriteLine("5. Hacer Consultas Sobre La DB");
 
                 int respuesta = Convert.ToInt32(Console.ReadLine());
 
-                //Libros más prestados
+                //Flujo Prestamo
                 if (respuesta == 1)
                 {
                     FlujoPrestamo(context);
@@ -61,6 +65,11 @@ namespace Biblioteca2
                 {
                     DetallesSocio(context);
                 }
+
+                if (respuesta == 5)
+                {
+                    HacerConsultas(context);
+                }
                 
                 Console.Clear();
                 Console.WriteLine("Desea Continuar?");
@@ -71,7 +80,70 @@ namespace Biblioteca2
             }
         }
 
-        static void DetallesSocio(BibliotecaContext context)
+        static void HacerConsultas(BibliotecaContext context)
+        {
+            Console.WriteLine("Que Consulta quiere hacer?"); 
+            Console.WriteLine("1. Libros mas Prestados");
+            Console.WriteLine("2. Socios Con Multas Pendientes");
+            Console.WriteLine("3. Préstasmos Vencidos");
+            Console.WriteLine("4. Disponibilidad de un Libro");
+            Console.WriteLine("5. Historial de un Socio");
+
+            switch (Convert.ToInt32(Console.ReadLine()))
+            {
+                case 1:
+                    var libros = context.Libro
+                        .OrderBy(l => l.Prestamos)
+                        .ThenBy(l => l.ISBN)
+                        .Take(5)
+                        .ToList();
+
+                foreach (var l in libros)
+                    {
+                        Console.WriteLine($"{l.ISBN} | {l.Titulo} | {l.Autor} | {l.Genero} | {l.CantidadCopias} | Veces Prestado: {l.Prestamos}");
+                    }
+                    Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                    Console.ReadLine();
+                    break;
+
+                case 2:
+
+                    var socios = context.Socio
+                        .ToList();
+
+                    foreach (var s in socios)
+                    {
+                        var prestamos = context.Prestamo
+                            .Where(p => p.Socio.NumeroSocio == s.NumeroSocio)
+                            .Include(p => p.Socio).ThenInclude(s => s.Tipo)
+                            .ToList();
+
+                        int multas = 0;
+
+                        foreach (var p in prestamos)
+                        {
+                            if (DateTime.Today > Convert.ToDateTime(p.FechaVencimiento))
+                            {
+                                multas += p.Socio.Tipo.MultaXDia * (DateTime.Today - Convert.ToDateTime(p.FechaVencimiento)).Days;
+                            }
+                        }
+
+                        if (multas > 0)
+                        {
+
+                            Console.WriteLine($"El Socio {s.Nombre} {s.Apellido} Debe ${multas}");
+                        }
+
+                    }
+                    Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                    Console.ReadLine();
+                    break;
+            }
+
+
+        }
+
+    static void DetallesSocio(BibliotecaContext context)
         {
             Console.WriteLine("Ingrese el ID de usuario");
             int socio_id = Convert.ToInt32(Console.ReadLine());
@@ -116,16 +188,24 @@ namespace Biblioteca2
 
             var prestamos = context.Prestamo
                 .Where(p => p.NumeroSocio == socio_id)
+                .Include (p => p.Socio) .ThenInclude(s => s.Tipo)
                 .Include(p => p.Libro)
                 .Include(p => p.Estado)
                 .OrderBy(p => p.ISBN)
                 .ToList();
 
+            int multas = 0;
+            
             foreach (var p in prestamos)
             {
                 Console.WriteLine($" ISBN {p.ISBN} | Titulo {p.Libro.Titulo} | Estado {p.Estado.Estado} | Fecha Vencimiento {p.FechaVencimiento}");
+                if (DateTime.Today > Convert.ToDateTime(p.FechaVencimiento))
+                {
+                    multas += p.Socio.Tipo.MultaXDia * (DateTime.Today - Convert.ToDateTime(p.FechaVencimiento)).Days;
+                }
             }
 
+            Console.WriteLine($"El Usuario Debe ${multas}");
 
 
             Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
@@ -221,6 +301,7 @@ namespace Biblioteca2
 
                         context.Prestamo.Add(nuevoPrestamo);
                         libro.CantidadCopias--;
+                        libro.Prestamos++;
                     }
                     else
                     {
@@ -313,6 +394,7 @@ namespace Biblioteca2
                     {
                         Console.WriteLine("El libro fue devuelto correctamente, Muchas Gracias!");
                         prestamoEncontrado.Libro.CantidadCopias++;
+                        prestamoEncontrado.Libro.Prestamos--;
                         prestamoEncontrado.FechaDevolucion = DateTime.Now.ToString("yyyy-MM-dd");
                     }
                     else
@@ -322,6 +404,7 @@ namespace Biblioteca2
                         int multa = prestamoEncontrado.Socio.Tipo.MultaXDia * Convert.ToInt32((DateTime.Now - Convert.ToDateTime(prestamoEncontrado.FechaDevolucion)).Days);
                         Console.WriteLine($" Se debera pagar una Suma de: {multa}");
                         prestamoEncontrado.Libro.CantidadCopias++;
+                        prestamoEncontrado.Libro.Prestamos--;
                     }
 
                     prestamoEncontrado.EstadoId = 2;
@@ -414,6 +497,7 @@ namespace Biblioteca2
 
                                     context.Prestamo.Add(nuevoPrestamo);
                                     libroEncontrado.CantidadCopias--;
+                                    libroEncontrado.Prestamos++;
                                     context.SaveChanges();
 
                                     Console.WriteLine("¡Préstamo registrado con éxito!");

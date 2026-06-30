@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Biblioteca_Koprcina_Isern")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f7e6ca70ca8f301808d33a004122bd673f5226d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8b3a1d1b3d21a88c91d1fe65fa070f28d53d4a2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Biblioteca_Koprcina_Isern")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Biblioteca_Koprcina_Isern")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
