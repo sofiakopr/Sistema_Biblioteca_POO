@@ -157,7 +157,82 @@ namespace Biblioteca2
                     Console.ReadLine();
                     break;
 
+
                 case 4:
+
+                    Console.WriteLine("Ingrese el ISBN del Libro");
+                    string ISBN = Console.ReadLine();
+                    var libro = context.Libro
+                        .FirstOrDefault(l => l.ISBN == ISBN);
+                    if (libro == null)
+                    {
+                        Console.WriteLine("No se ha encontrado un libro con tal ISBN. Pruebe de ingresar otro.");
+                        Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                        Console.ReadLine();
+                        return;
+                    }
+                    Console.WriteLine($"ISBN: {libro.ISBN} | Titulo: {libro.Titulo} | Autor: {libro.Autor} | Genero: {libro.Genero} | Copias Disponibles: {libro.CantidadCopias}");
+                    var reservas = context.Reserva
+                        .Where(r => r.ISBN == ISBN && r.EstadoId == 1)
+                        .Include(r => r.Socio)
+                        .ToList();
+                    if(reservas.Count > 0)
+                    {
+                        Console.WriteLine("Reservas Activas:");
+                        foreach (var r in reservas)
+                        {
+                            Console.WriteLine($"Socio: {r.Socio.Nombre} {r.Socio.Apellido} | Fecha de Reserva: {r.FechaReserva}");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No hay reservas activas para este libro.");
+                    }
+                    Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                    Console.ReadLine();
+                    break;
+
+                case 5: //Historial de un socio
+
+                    Console.WriteLine("Ingrese el ID del socio:");
+                    int idSocio = Convert.ToInt32(Console.ReadLine());
+                    var socio = context.Socio
+                        .Where(s => s.NumeroSocio == idSocio)
+                        .Take(1)
+                        .ToList(); 
+
+                    var prestamosSocio = context.Prestamo
+                        .Where(p => p.NumeroSocio == idSocio)
+                        .Include(p => p.Libro)
+                        .Include(p => p.Estado)
+                        .ToList();
+
+                    var reservasSocio = context.Reserva
+                        .Where(r => r.NumeroSocio == idSocio)
+                        .Include(r => r.Libro)
+                        .Include(r => r.Estado)
+                        .ToList();
+
+                    foreach (var s in socio)
+                    {
+                        Console.WriteLine($"Socio: {s.Nombre} {s.Apellido} | ID: {s.NumeroSocio} | Email: {s.Email}");
+                    }
+
+
+                    foreach (var p in prestamosSocio)
+                    {
+                        Console.WriteLine($"Préstamo - Libro: {p.Libro.Titulo} | Fecha de Préstamo: {p.FechaPrestamo} | Fecha de Vencimiento: {p.FechaVencimiento} | Estado Préstamo: {p.Estado.Estado}");
+                    }
+
+                    foreach (var r in reservasSocio)
+                    {
+                        Console.WriteLine($"Reserva - Libro: {r.Libro.Titulo} | Fecha de Reserva: {r.FechaReserva} | Estado Reserva: {r.Estado.Estado}");
+                    }
+
+                    Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                    Console.ReadLine();
+                    break;
+
 
 
             }
@@ -177,7 +252,8 @@ namespace Biblioteca2
             if (socio == null)
             {
                 Console.WriteLine("Ese Socio no existe");
-                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                Console.ReadLine();
                 return;
             }
 
@@ -254,7 +330,8 @@ namespace Biblioteca2
             if (socio == null)
             {
                 Console.WriteLine("Ese Socio no existe");
-                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                Console.ReadLine();
                 return;
             }
 
@@ -267,7 +344,8 @@ namespace Biblioteca2
             if (libro == null)
             {
                 Console.WriteLine("Ese libro no está");
-                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                Console.ReadLine();
                 return;
             }
 
@@ -288,11 +366,14 @@ namespace Biblioteca2
                         };
                         Console.WriteLine("Reserva añadida con exito!");
                         context.Reserva.Add(nuevaReserva);
+                        context.SaveChanges();
                     } else
                     {
                         Console.WriteLine("Esa reserva ya existe");
+                        context.SaveChanges();
                     }
-                    System.Threading.Thread.Sleep(1000);
+                    Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                    Console.ReadLine();
                     break;
 
                 case 2:
@@ -302,7 +383,8 @@ namespace Biblioteca2
                     if (reserva == null)
                     {
                         Console.WriteLine("No se econtro la reserva");
-                        System.Threading.Thread.Sleep (1000);
+                        Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                        Console.ReadLine();
                         break;
                     }
                     if (libro.CantidadCopias > 0)
@@ -328,7 +410,8 @@ namespace Biblioteca2
                     else
                     {
                         Console.WriteLine("Todavia no hay copias de ese libro disponibles");
-                        System.Threading.Thread.Sleep(2000);
+                        Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                        Console.ReadLine();
                     }
                     break;
 
@@ -344,7 +427,8 @@ namespace Biblioteca2
                         Console.WriteLine("Reserva Cancelada Exitosamente");
                         reservaa.EstadoId = 3;
                     }
-                    System.Threading.Thread.Sleep(2000);
+                    Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                    Console.ReadLine();
                     break;
             }
 
@@ -364,14 +448,16 @@ namespace Biblioteca2
             if (socio == null)
             {
                 Console.WriteLine("El socio no existe.");
-                System.Threading.Thread.Sleep(2000);
+                Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                Console.ReadLine();
                 return;
             }
 
             if (socio.Activo == 0)
             {
                 Console.WriteLine("El socio se encuentra inactivo.");
-                System.Threading.Thread.Sleep(2000);
+                Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                Console.ReadLine();
                 return;
             }
 
@@ -385,7 +471,8 @@ namespace Biblioteca2
             if (prestamosActivos.Count == 0)
             {
                 Console.WriteLine("Este socio no tiene préstamos activos en este momento.");
-                System.Threading.Thread.Sleep(2000);
+                Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                Console.ReadLine();
                 return;
             }
 
@@ -432,8 +519,8 @@ namespace Biblioteca2
                     prestamoEncontrado.EstadoId = 2;
                     context.SaveChanges();
                     ISBMcorrecto = true;
-                    System.Threading.Thread.Sleep(2000);
-
+                    Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                    Console.ReadLine();
                 }
             }
 
@@ -452,7 +539,8 @@ namespace Biblioteca2
             if (socio == null)
             {
                 Console.WriteLine("El socio no existe.");
-                System.Threading.Thread.Sleep(2000);
+                Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                Console.ReadLine();
             }
             else
             {
@@ -460,7 +548,8 @@ namespace Biblioteca2
                 if (socio.Activo == 0)
                 {
                     Console.WriteLine("El socio se encuentra inactivo.");
-                    System.Threading.Thread.Sleep(2000);
+                    Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                    Console.ReadLine();
                 }
                 else
                 {
@@ -472,7 +561,8 @@ namespace Biblioteca2
                     {
                         Console.WriteLine($"El socio ya superó el límite de libros simultáneos para su categoría ({socio.Tipo.Tipo}).");
                         Console.WriteLine($"Límite: {socio.Tipo.LibrosMax} | Actualmente prestados: {cantidadPrestados}");
-                        System.Threading.Thread.Sleep(2000);
+                        Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                        Console.ReadLine();
                     }
                     else
                     {
@@ -501,7 +591,8 @@ namespace Biblioteca2
                                 {
                                     Console.WriteLine("\n[ERROR] El socio ya tiene un préstamo activo de este libro y no lo ha devuelto.");
                                     Console.WriteLine("No se puede registrar el préstamo. Volviendo al menú...");
-                                    System.Threading.Thread.Sleep(3000);
+                                    Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                                    Console.ReadLine();
                                     break; // Sale del bucle para no intentar el .Add()
                                 }
                                 else
@@ -524,7 +615,8 @@ namespace Biblioteca2
 
                                     Console.WriteLine("¡Préstamo registrado con éxito!");
                                     Console.WriteLine($"El libro debe devolverse antes del: {nuevoPrestamo.FechaVencimiento}");
-                                    System.Threading.Thread.Sleep(3000);
+                                    Console.WriteLine("Pulse Cualquier Tecla Para Continuar");
+                                    Console.ReadLine();
                                     tenemos_libro = true;
                                 }
                             }

@@ -15,7 +15,7 @@ namespace Biblioteca2
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlite(@"Data Source=C:\Users\felip\Desktop\Sistema_Biblioteca_POO2\Biblioteca_Koprcina_Isern\Biblioteca_Koprcina_Isern\Sistema_Biblioteca.db");
+            options.UseSqlite(@"Data Source=C:\Users\sofia\Documents\Sistema_Biblioteca_POO-main\Biblioteca_Koprcina_Isern\Biblioteca_Koprcina_Isern\Sistema_Biblioteca.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
